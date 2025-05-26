@@ -12,7 +12,7 @@ const page = usePage<SharedData>();
 
 <template>
     <SidebarGroup class="px-2 py-0">
-        <SidebarGroupLabel>Platforma</SidebarGroupLabel>
+        <SidebarGroupLabel>Plataforma</SidebarGroupLabel>
         <SidebarMenu>
             <SidebarMenuItem v-for="item in items" :key="item.title">
                 <SidebarMenuButton 
@@ -26,5 +26,8 @@ const page = usePage<SharedData>();
                 </SidebarMenuButton>
             </SidebarMenuItem>
         </SidebarMenu>
+        <Link :href="route('tasks.index')" :active="route().current('tasks.index')"> <!--v-if="can('tasks.list')"-->
+            Tasks List
+        </Link>
     </SidebarGroup>
 </template>
